@@ -10,7 +10,7 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
-const applicationsController = require('./controllers/applications.js');
+const sightingsController = require('./controllers/sightings.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -34,7 +34,7 @@ app.use(passUserToView);
 
 app.get('/', (req, res) => {
   if (req.session.user) {
-    res.redirect(`/users/${req.session.user._id}/applications`);
+    res.redirect(`/users/${req.session.user._id}/sightings`);
   } else {
     res.render('index.ejs');
   }
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 
 app.use(isSignedIn);
-app.use('/users/:userId/applications', applicationsController);
+app.use('/users/:userId/sightings', sightingsController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

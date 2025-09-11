@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 
 const sightingSchema = new mongoose.Schema({
   date: {
-    type: Number,
-    required: true,
+    type: Date,
+    required: [true,"the date is required"],
   },
   time: {
-    type: Number,
-    required: true,
+    type: String,
+    match: [/^\d{2}:\d{2}$/, "Time must be in HH:mm format"],
+    required: [true, "the time is required"],
   },
   location: {
     type: String,

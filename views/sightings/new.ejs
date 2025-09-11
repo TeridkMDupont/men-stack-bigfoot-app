@@ -9,11 +9,14 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Record a Sighting</h1>
     
-<form action="/users/<%= user._id %>/applications" method="POST">
+<form action="/users/<%= user._id %>/sightings" method="POST">
+  
   <label for="date">Date:</label>
   <input type="date" name="date" id="date" />
+
   <label for="time">Time:</label>
   <input type="time" name="time" id="time" />
+
   <label for="location">Location:</label>
   <select id="location" name="location">
     <option value="Alabama">Alabama</option>
@@ -70,6 +73,7 @@
 
   <label for="comments">Comments:</label>
   <textarea name="comments" id="comments"></textarea>
+
   <button type="submit">Add Sighting</button>
 </form>
 
