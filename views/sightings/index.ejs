@@ -9,5 +9,12 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Your Sightings</h1>
      <a href="/users/<%=user._id%>/sightings/new">Record a Sighting</a>
+            <ul>
+      <% sightings.forEach((sighting)=>{ %>
+         <a href="/users/<%= user._id %>/sightings/<%= sighting._id %>">
+          <li><%= user.username %> saw Bigfoot in <%= sighting.location %> at <%= sighting.time %></li>
+        </a>
+      <% }) %>
+    </ul>
   </body>
 </html>

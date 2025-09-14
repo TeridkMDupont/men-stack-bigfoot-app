@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= sighting.location %> Sighting</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= user.username%>'s <%= sighting.location %> Sighting</h1>
+    <h2> Date: <%= sighting.date %></h2>
+    <h2> Time :<%= sighting.time %></h2>
+    <% if (sighting.comments) { %>
+    <p>Comments: <%= sighting.comments %></p>
+    <% } %>
+
+     <a href="/users/<%= user._id %>/sightings/<%= sighting._id %>/edit">
+      Edit this Sighting
+    </a>
+
+    <form
+      action="/users/<%= user._id %>/sightings/<%= sighting._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this Sighting</button>
+    </form>
+  </body>
+</html>
