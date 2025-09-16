@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { format } = require("date-fns")
+
+
 
 const User = require('../models/user.js');
 
@@ -38,9 +41,18 @@ router.get('/', async (req, res) => {
 router.get('/:sightingId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const sightings = currentUser.sightings.id(req.params.sightingId);
+    const sighting = currentUser.sightings.id(req.params.sightingId);
+      const formattedDate = sighting?.date
+      ? new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          timeZone: "UTC"
+        }).format(new Date(sighting.date))
+      : '';
     res.render('sightings/show.ejs', {
-      sighting: sightings,
+      sighting,
+      formattedDate,
     });
   } catch (error) {
     console.log(error);
@@ -52,9 +64,13 @@ router.get('/:sightingId', async (req, res) => {
 router.get('/:sightingId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const sightings = currentUser.sightings.id(req.params.sightingId);
+    const sighting = currentUser.sightings.id(req.params.sightingId);
+    const dateISO = sighting?.date
+      ? new Date(sighting.date).toISOString().slice(0, 10)
+      : '';
     res.render('sightings/edit.ejs', {
-      sighting: sightings,
+      sighting,
+      dateISO
     });
   } catch (error) {
     console.log(error);

@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Log a Sighting</title>
   </head>
-  <body>
+  <body class="new-body">
     <%- include('../partials/_navbar.ejs') %>
+    <div class="new-container">
     <h1>Record a Sighting</h1>
     
-<form action="/users/<%= user._id %>/sightings" method="POST">
+  <form action="/users/<%= user._id %>/sightings" method="POST">
 
   <label for="date">Date:</label>
   <input type="date" name="date" id="date" />
@@ -73,10 +74,10 @@
   </select>
 
   <label for="comments">Comments:</label>
-  <textarea name="comments" id="comments"></textarea>
+  <textarea name="comments" id="comments"></textarea><br>
 
   <button type="submit">Add Sighting</button>
 </form>
-
+</div>
   </body>
 </html>

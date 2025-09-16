@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Beastly&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
 
 body {
-  font-family: 'Roboto' sans-serif;
+  font-family: 'Rubik Beastly', cursive;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -10,17 +10,192 @@ body {
 }
 
 .index-body {
-  background-image: url("https://imgur.com/a/5GzVfMx");
+  background-image: url("https://i.imgur.com/VlObWcO.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  width: 100vw;
+  background-size:contain;
+  background-position: center;
+  min-height:min-content;
+  width:min-content;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
 }
 
-.index-container {
+.main-header {
+  font-family: "Rubik Beastly";
+  font-weight:200;
+  color: white;
+  font-size: 5.6em;
+}
+
+.subheader {
+  font-family: "Rubik Beastly", cursive;
+  margin: 0 20px 0 20px;
+  font-size: 1.4em;
+}
+
+
+.auth-links {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin: 0 80px 0 0;
   height: 100%;
+}
+
+/* .signup-link,
+.signin-link {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 8px 0;
+  border-radius: 25px;
+  width: 10em;
+  text-align: center;
+} */
+
+.signup-link {
+  background-color: #ce4866;
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+.signup-link:hover {
+  background-color: #ff5378;
+}
+
+.signin-link {
+  background-color: #f6e7e7;
+  color: #1c2e5b;
+  margin: 20px 0 0 0;
+}
+
+.signin-link:hover {
+  background-color: #ffffff;
+}
+
+
+.signup-body {
+  background-image: url("https://i.imgur.com/3K1RQh5.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup-container {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 13px; 
+    padding: 30px; 
+}
+
+.signup-container h1 {
+    display: flex;
+    justify-content:space-around;
+    font-size: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container button {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  background-color: #0ea0cc;
+  font-family: sans-serif;
+  font-size: 30px;
+  border-radius: 13px;
+}
+
+.signin-body {
+  background-image: url("https://i.imgur.com/q6Uv25K.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup-container button:hover {
+  background: white;
+}
+
+.signin-container {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 13px; 
+    padding: 30px; 
+}
+
+.signin-container h1 {
+    display: flex;
+    justify-content:space-around;
+    font-size: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+.signin-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-container button {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  background-color: #1ca001;
+  font-family: sans-serif;
+  font-size: 30px;
+  border-radius: 13px;
+}
+
+.signin-container button:hover {
+  background: white;
+}
+
+.new-container {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 13px; 
+    padding: 30px; 
+}
+
+.new-container h1 {
+      display: flex;
+    justify-content:space-around;
+    font-size: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+.new-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-container button {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  background-color: #1ca001;
+  font-family: sans-serif;
+  font-size: 30px;
+  border-radius: 13px;
+}
+
+.new-body {
+  background-image: url("https://i.imgur.com/gl3dxsp.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
