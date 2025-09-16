@@ -8,14 +8,18 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="sightings-container">
     <h1>Your Sightings</h1>
-     <a href="/users/<%=user._id%>/sightings/new">Record a Sighting</a>
-            <ul>
+    <div id="sightings-link">
+     <a href="/users/<%=user._id%>/sightings/new">Record a Sighting</a><br>
+      <ul>
       <% sightings.forEach((sighting)=>{ %>
          <a href="/users/<%= user._id %>/sightings/<%= sighting._id %>">
-          <li><%= user.username %> saw Bigfoot in <%= sighting.location %> at <%= sighting.time %></li>
+          <li><%= user.username %> saw Bigfoot in <%= sighting.location %> at <%= sighting.time %></li><br>
         </a>
       <% }) %>
     </ul>
+    </div>
+    </div>
   </body>
 </html>

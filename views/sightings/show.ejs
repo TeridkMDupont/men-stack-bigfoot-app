@@ -8,6 +8,7 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="show-container">
     <h1><%= user.username%>'s <%= sighting.location %> Sighting</h1>
     <h2> Date: <%= formattedDate %></h2>
     <h2> Time : <%= sighting.time %></h2>
@@ -25,5 +26,6 @@
     >
       <button type="submit">Delete this Sighting</button>
     </form>
+    </div>
   </body>
 </html>

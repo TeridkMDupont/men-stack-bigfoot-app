@@ -171,7 +171,7 @@ body {
 }
 
 .new-container h1 {
-      display: flex;
+    display: flex;
     justify-content:space-around;
     font-size: 40px;
     font-weight: 200;
@@ -198,4 +198,73 @@ body {
   background-image: url("https://i.imgur.com/gl3dxsp.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.sightings-container {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 13px; 
+    padding: 30px; 
+}
+
+.sightings-container h1 {
+    display: flex;
+    justify-content:space-around;
+    font-size: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+#sightings-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.show-container {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 13px; 
+    padding: 30px; 
+}
+
+.show-container h1 {
+    display: flex;
+    justify-content:space-around;
+    font-size: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid;
+    padding-bottom: 30px;
+}
+
+.show-container h2 {
+    display: flex;
+    justify-content:space-around;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.show-container p {
+  border: 1px solid;
+  border-radius: 5px;
+  font-weight: 50;
+}
+
+.show-container button {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  background-color: #1ca001;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 13px;
+}
+
+.show-container button:hover {
+    background: white;
 }
