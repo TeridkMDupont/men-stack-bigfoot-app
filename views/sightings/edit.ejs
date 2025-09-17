@@ -6,237 +6,237 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Editing <%= user.username %>'s Sighting</title>
   </head>
-  <body>
+  <body class="edit-body">
     <%- include('../partials/_navbar.ejs') %>
+    <div class="edit-container">
     <h1>Edit <%= user.username %>'s <%= sighting.location %> Sighting</h1>
-    
-<form action="/users/<%= user._id %>/sightings/<%= sighting._id %>?_method=PUT"
-  method="POST">
-  
-  <label for="date">Date:</label>
-  <input 
-  type="date" 
-  name="date" 
-  id="date" 
-  value="<%=dateISO%>"/>
+      <form action="/users/<%= user._id %>/sightings/<%= sighting._id %>?_method=PUT"
+        method="POST">
+        
+        <label for="date">Date:</label>
+        <input 
+        type="date" 
+        name="date" 
+        id="date" 
+        value="<%=dateISO%>"/>
 
-  <label for="time">Time:</label>
-  <input 
-  type="time" 
-  name="time" 
-  id="time" 
-  value="<%= sighting.time%>"/>
+        <label for="time">Time:</label>
+        <input 
+        type="time" 
+        name="time" 
+        id="time" 
+        value="<%= sighting.time%>"/>
 
-  <label for="location">Location:</label>
-  <select id="location" name="location">
-    <option 
-    value="Alabama"
-    <%= sighting.location === "Alabama" ? "selected" : "" %>
-    >Alabama
-    </option>
-    <option value="Alaska" 
-    <%= sighting.location === "Alaska" ? "selected" : "" %>
-    >Alaska
-    </option>
-    <option value="Arizona" 
-    <%= sighting.location === "Arizona" ? "selected" : "" %>
-    >Arizona
-    </option>
-    <option value="Arkansas" 
-    <%= sighting.location === "Arkansas" ? "selected" : "" %>
-    >Arkansas
-    </option>
-    <option value="California" 
-    <%= sighting.location === "California" ? "selected" : "" %>
-    >California
-    </option>
-    <option value="Colorado" 
-    <%= sighting.location === "Colorado" ? "selected" : "" %>
-    >Colorado
-    </option>
-    <option value="Connecticut" 
-    <%= sighting.location === "Connecticut" ? "selected" : "" %>
-    >Connecticut
-    </option>
-    <option value="Delaware" 
-    <%= sighting.location === "Delaware" ? "selected" : "" %>
-    >Delaware
-    </option>
-    <option value="Florida" 
-    <%= sighting.location === "Florida" ? "selected" : "" %>
-    >Florida
-    </option>
-    <option value="Georgia" 
-    <%= sighting.location === "Georgia" ? "selected" : "" %>
-    >Georgia
-    </option>
-    <option value="Hawaii" 
-    <%= sighting.location === "Hawaii" ? "selected" : "" %>
-    >Hawaii
-    </option>
-    <option value="Idaho" 
-    <%= sighting.location === "Idaho" ? "selected" : "" %>
-    >Idaho
-    </option>
-    <option value="Illinois" 
-    <%= sighting.location === "Illinois" ? "selected" : "" %>
-    >Illinois
-    </option>
-    <option value="Indiana"
-    <%= sighting.location === "Indiana" ? "selected" : "" %>
-    >Indiana
-    </option>
-    <option value="Iowa" 
-    <%= sighting.location === "Iowa" ? "selected" : "" %>
-    >Iowa
-    </option>
-    <option value="Kansas" 
-    <%= sighting.location === "Kansas" ? "selected" : "" %>
-    >Kansas
-    </option>
-    <option value="Kentucky" 
-    <%= sighting.location === "Kentucky" ? "selected" : "" %>
-    >Kentucky
-    </option>
-    <option value="Louisiana" 
-    <%= sighting.location === "Louisiana" ? "selected" : "" %>
-    >Louisiana
-    </option>
-    <option value="Maine" 
-    <%= sighting.location === "Maine" ? "selected" : "" %>
-    >Maine
-    </option>
-    <option value="Maryland" 
-    <%= sighting.location === "Maryland" ? "selected" : "" %>
-    >Maryland  
-    </option>
-    <option value="Massachusetts" 
-    <%= sighting.location === "Massachusetts" ? "selected" : "" %>
-    >Massachusetts
-    </option>
-    <option value="Michigan" 
-    <%= sighting.location === "Michigan" ? "selected" : "" %>
-    >Michigan
-    </option>
-    <option value="Minnesota" 
-    <%= sighting.location === "Minnesota" ? "selected" : "" %>
-    >Minnesota
-    </option>
-    <option value="Mississippi" 
-    <%= sighting.location === "Mississippi" ? "selected" : "" %>
-    >Mississippi
-    </option>
-    <option value="Missouri" 
-    <%= sighting.location === "Missouri" ? "selected" : "" %>
-    >Missouri
-    </option>
-    <option value="Montana" 
-    <%= sighting.location === "Montana" ? "selected" : "" %>
-    >Montana
-    </option>
-    <option value="Nebraska" 
-    <%= sighting.location === "Nebraska" ? "selected" : "" %>
-    >Nebraska
-    </option>
-    <option value="Nevada" 
-    <%= sighting.location === "Nevada" ? "selected" : "" %>
-    >Nevada
-    </option>
-    <option value="New Hampshire" 
-    <%= sighting.location === "New Hampshire" ? "selected" : "" %>
-    >New Hampshire
-    </option>
-    <option value="New Jersey" 
-    <%= sighting.location === "New Jersey" ? "selected" : "" %>
-    >New Jersey
-    </option>
-    <option value="New Mexico" 
-    <%= sighting.location === "New Mexico" ? "selected" : "" %>
-    >New Mexico
-    </option>
-    <option value="New York" 
-    <%= sighting.location === "New York" ? "selected" : "" %>
-    >New York
-    </option>
-    <option value="North Carolina" 
-    <%= sighting.location === "North Carolina" ? "selected" : "" %>
-    >North Carolina
-    </option>
-    <option value="North Dakota" 
-    <%= sighting.location === "North Dakota" ? "selected" : "" %>
-    >North Dakota
-    </option>
-    <option value="Ohio" 
-    <%= sighting.location === "Ohio" ? "selected" : "" %>
-    >Ohio
-    </option>
-    <option value="Oklahoma" 
-    <%= sighting.location === "Oklahoma" ? "selected" : "" %>
-    >Oklahoma
-    </option>
-    <option value="Oregon" 
-    <%= sighting.location === "Oregon" ? "selected" : "" %>
-    >Oregon
-    </option>
-    <option value="Pennsylvania" 
-    <%= sighting.location === "Pennsylvania" ? "selected" : "" %>
-    >Pennsylvania
-    </option>
-    <option value="Rhode Island" 
-    <%= sighting.location === "Rhode Island" ? "selected" : "" %>
-    >Rhode Island
-    </option>
-    <option value="South Carolina" 
-    <%= sighting.location === "South Carolina" ? "selected" : "" %>
-    >South Carolina
-    </option>
-    <option value="South Dakota" 
-    <%= sighting.location === "South Dakota" ? "selected" : "" %>
-    >South Dakota
-    </option>
-    <option value="Tennessee" 
-    <%= sighting.location === "Tennessee" ? "selected" : "" %>
-    >Tennessee
-    </option>
-    <option value="Texas" 
-    <%= sighting.location === "Texas" ? "selected" : "" %>
-    >Texas
-    </option>
-    <option value="Utah" 
-    <%= sighting.location === "Utah" ? "selected" : "" %>
-    >Utah
-    </option>
-    <option value="Vermont" 
-    <%= sighting.location === "Vermont" ? "selected" : "" %>
-    >Vermont
-    </option>
-    <option value="Virginia" 
-    <%= sighting.location === "Virginia" ? "selected" : "" %>
-    >Virginia
-    </option>
-    <option value="Washington" 
-    <%= sighting.location === "Washington" ? "selected" : "" %>
-    >Washington
-    </option>
-    <option value="West Virginia" 
-    <%= sighting.location === "West Virginia" ? "selected" : "" %>
-    >West Virginia
-    </option>
-    <option value="Wisconsin" 
-    <%= sighting.location === "Wisconsin" ? "selected" : "" %>
-    >Wisconsin
-    </option>
-    <option value="Wyoming" 
-    <%= sighting.location === "Wyoming" ? "selected" : "" %>
-    >Wyoming
-    </option>
-  </select>
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+          <option 
+          value="Alabama"
+          <%= sighting.location === "Alabama" ? "selected" : "" %>
+          >Alabama
+          </option>
+          <option value="Alaska" 
+          <%= sighting.location === "Alaska" ? "selected" : "" %>
+          >Alaska
+          </option>
+          <option value="Arizona" 
+          <%= sighting.location === "Arizona" ? "selected" : "" %>
+          >Arizona
+          </option>
+          <option value="Arkansas" 
+          <%= sighting.location === "Arkansas" ? "selected" : "" %>
+          >Arkansas
+          </option>
+          <option value="California" 
+          <%= sighting.location === "California" ? "selected" : "" %>
+          >California
+          </option>
+          <option value="Colorado" 
+          <%= sighting.location === "Colorado" ? "selected" : "" %>
+          >Colorado
+          </option>
+          <option value="Connecticut" 
+          <%= sighting.location === "Connecticut" ? "selected" : "" %>
+          >Connecticut
+          </option>
+          <option value="Delaware" 
+          <%= sighting.location === "Delaware" ? "selected" : "" %>
+          >Delaware
+          </option>
+          <option value="Florida" 
+          <%= sighting.location === "Florida" ? "selected" : "" %>
+          >Florida
+          </option>
+          <option value="Georgia" 
+          <%= sighting.location === "Georgia" ? "selected" : "" %>
+          >Georgia
+          </option>
+          <option value="Hawaii" 
+          <%= sighting.location === "Hawaii" ? "selected" : "" %>
+          >Hawaii
+          </option>
+          <option value="Idaho" 
+          <%= sighting.location === "Idaho" ? "selected" : "" %>
+          >Idaho
+          </option>
+          <option value="Illinois" 
+          <%= sighting.location === "Illinois" ? "selected" : "" %>
+          >Illinois
+          </option>
+          <option value="Indiana"
+          <%= sighting.location === "Indiana" ? "selected" : "" %>
+          >Indiana
+          </option>
+          <option value="Iowa" 
+          <%= sighting.location === "Iowa" ? "selected" : "" %>
+          >Iowa
+          </option>
+          <option value="Kansas" 
+          <%= sighting.location === "Kansas" ? "selected" : "" %>
+          >Kansas
+          </option>
+          <option value="Kentucky" 
+          <%= sighting.location === "Kentucky" ? "selected" : "" %>
+          >Kentucky
+          </option>
+          <option value="Louisiana" 
+          <%= sighting.location === "Louisiana" ? "selected" : "" %>
+          >Louisiana
+          </option>
+          <option value="Maine" 
+          <%= sighting.location === "Maine" ? "selected" : "" %>
+          >Maine
+          </option>
+          <option value="Maryland" 
+          <%= sighting.location === "Maryland" ? "selected" : "" %>
+          >Maryland  
+          </option>
+          <option value="Massachusetts" 
+          <%= sighting.location === "Massachusetts" ? "selected" : "" %>
+          >Massachusetts
+          </option>
+          <option value="Michigan" 
+          <%= sighting.location === "Michigan" ? "selected" : "" %>
+          >Michigan
+          </option>
+          <option value="Minnesota" 
+          <%= sighting.location === "Minnesota" ? "selected" : "" %>
+          >Minnesota
+          </option>
+          <option value="Mississippi" 
+          <%= sighting.location === "Mississippi" ? "selected" : "" %>
+          >Mississippi
+          </option>
+          <option value="Missouri" 
+          <%= sighting.location === "Missouri" ? "selected" : "" %>
+          >Missouri
+          </option>
+          <option value="Montana" 
+          <%= sighting.location === "Montana" ? "selected" : "" %>
+          >Montana
+          </option>
+          <option value="Nebraska" 
+          <%= sighting.location === "Nebraska" ? "selected" : "" %>
+          >Nebraska
+          </option>
+          <option value="Nevada" 
+          <%= sighting.location === "Nevada" ? "selected" : "" %>
+          >Nevada
+          </option>
+          <option value="New Hampshire" 
+          <%= sighting.location === "New Hampshire" ? "selected" : "" %>
+          >New Hampshire
+          </option>
+          <option value="New Jersey" 
+          <%= sighting.location === "New Jersey" ? "selected" : "" %>
+          >New Jersey
+          </option>
+          <option value="New Mexico" 
+          <%= sighting.location === "New Mexico" ? "selected" : "" %>
+          >New Mexico
+          </option>
+          <option value="New York" 
+          <%= sighting.location === "New York" ? "selected" : "" %>
+          >New York
+          </option>
+          <option value="North Carolina" 
+          <%= sighting.location === "North Carolina" ? "selected" : "" %>
+          >North Carolina
+          </option>
+          <option value="North Dakota" 
+          <%= sighting.location === "North Dakota" ? "selected" : "" %>
+          >North Dakota
+          </option>
+          <option value="Ohio" 
+          <%= sighting.location === "Ohio" ? "selected" : "" %>
+          >Ohio
+          </option>
+          <option value="Oklahoma" 
+          <%= sighting.location === "Oklahoma" ? "selected" : "" %>
+          >Oklahoma
+          </option>
+          <option value="Oregon" 
+          <%= sighting.location === "Oregon" ? "selected" : "" %>
+          >Oregon
+          </option>
+          <option value="Pennsylvania" 
+          <%= sighting.location === "Pennsylvania" ? "selected" : "" %>
+          >Pennsylvania
+          </option>
+          <option value="Rhode Island" 
+          <%= sighting.location === "Rhode Island" ? "selected" : "" %>
+          >Rhode Island
+          </option>
+          <option value="South Carolina" 
+          <%= sighting.location === "South Carolina" ? "selected" : "" %>
+          >South Carolina
+          </option>
+          <option value="South Dakota" 
+          <%= sighting.location === "South Dakota" ? "selected" : "" %>
+          >South Dakota
+          </option>
+          <option value="Tennessee" 
+          <%= sighting.location === "Tennessee" ? "selected" : "" %>
+          >Tennessee
+          </option>
+          <option value="Texas" 
+          <%= sighting.location === "Texas" ? "selected" : "" %>
+          >Texas
+          </option>
+          <option value="Utah" 
+          <%= sighting.location === "Utah" ? "selected" : "" %>
+          >Utah
+          </option>
+          <option value="Vermont" 
+          <%= sighting.location === "Vermont" ? "selected" : "" %>
+          >Vermont
+          </option>
+          <option value="Virginia" 
+          <%= sighting.location === "Virginia" ? "selected" : "" %>
+          >Virginia
+          </option>
+          <option value="Washington" 
+          <%= sighting.location === "Washington" ? "selected" : "" %>
+          >Washington
+          </option>
+          <option value="West Virginia" 
+          <%= sighting.location === "West Virginia" ? "selected" : "" %>
+          >West Virginia
+          </option>
+          <option value="Wisconsin" 
+          <%= sighting.location === "Wisconsin" ? "selected" : "" %>
+          >Wisconsin
+          </option>
+          <option value="Wyoming" 
+          <%= sighting.location === "Wyoming" ? "selected" : "" %>
+          >Wyoming
+          </option>
+        </select>
 
-  <label for="comments">Comments:</label>
-  <textarea name="comments" id="comments"><%= sighting.comments %></textarea>
+        <label for="comments">Comments:</label>
+        <textarea name="comments" id="comments"><%= sighting.comments %></textarea><br>
 
-  <button type="submit">Update Sighting</button>
-</form>
-
+        <button type="submit">Update Sighting</button>
+      </form>
+      </div>
   </body>
 </html>
